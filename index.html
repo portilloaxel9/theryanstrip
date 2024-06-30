@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Ryan's Trip</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
+</head>
+<body>
+    <h1>The Ryan's Trip</h1>
+    <div id="countdown">
+        <span id="days">0</span> days left until the trip!
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Flag_of_Argentina.svg" alt="Argentina Flag" class="flag animated-flag" />
+    </div>
+    <div id="calendar"></div>
+    <div class="button-container">
+        <button id="homeButton"><i class="fas fa-home"></i> Home</button>
+        <button id="emergencyButton"><i class="fas fa-exclamation-triangle"></i> Emergency</button>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">Activities for the Day</h2>
+            <div class="activities"></div>
+        </div>
+    </div>
+    <div id="homeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Home Information</h2>
+            <textarea id="homeInfo" placeholder="Enter home information"></textarea>
+            <button onclick="saveHomeInfo()">Save</button>
+        </div>
+    </div>
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Emergency Contacts</h2>
+            <div class="emergency-contacts">
+                <div class="contact-item">
+                    <img src="./foto_perfil.jpg" alt="Profile Picture" class="profile-picture" />
+                    <div class="contact-info">
+                        <p class="contact-name">Axel Portillo</p>
+                        <p class="contact-phone"><i class="fas fa-phone-alt"></i> <a href="#" onclick="confirmCall('+5401134231260')">+54 011 34231260</a></p>
+                        <p class="contact-instagram"><i class="fab fa-instagram"></i> <a href="https://instagram.com/axelportillo" target="_blank">axelportillo</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="callConfirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Are you sure you want to call this contact?</h2>
+            <button class="full-width" id="confirmCallButton">Yes</button>
+            <button class="full-width" onclick="cancelCall()">No</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
