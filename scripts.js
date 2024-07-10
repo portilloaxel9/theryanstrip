@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
     const startDate = new Date(2024, 7, 28); // 28 August 2024
     const endDate = new Date(2024, 8, 9);   // 9 September 2024
     const calendar = document.getElementById('calendar');
@@ -71,9 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 activityList.appendChild(item);
             });
+            return filteredActivities.length;
         } catch (error) {
             console.error('Error:', error);
+            return 0;
         }
+    }
+
+    async function updateDayElement(dayElem, idDay) {
+        const day = { idDay };
+        const activityCount = await renderActivities(day);
+        dayElem.querySelector('.activity-count').textContent = `${activityCount} activities`;
     }
 
     for (let date = new Date(startDate); date <= endDate; date.setDate(date.getDate() + 1)) {
@@ -83,7 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dayElem.className = `day`;
         const iconIndex = (date - startDate) / (1000 * 60 * 60 * 24) % icons.length;
         const idDay = Math.floor((date - startDate) / (1000 * 60 * 60 * 24)) + 1;
-        dayElem.innerHTML = `<i class="${icons[iconIndex]} icon"></i> ${dayOfWeek}, ${dayString}`;
+        dayElem.innerHTML = `<i class="${icons[iconIndex]} icon"></i> ${dayOfWeek}, ${dayString} <span class="activity-count"></span>`;
         dayElem.onclick = function() {
             currentDay = { idDay, dayString };
             modalTitle.textContent = `Activities for ${currentDay.dayString}`;
@@ -91,6 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
             renderActivities(currentDay);
         };
         calendar.appendChild(dayElem);
+        updateDayElement(dayElem, idDay);
     }
 
     document.getElementById('homeButton').onclick = function() {
