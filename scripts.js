@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    const startDate = new Date(2024, 7, 28); // 28 August 2024
+    const startDate = new Date(2024, 7, 29); // 28 August 2024
     const endDate = new Date(2024, 8, 9);   // 9 September 2024
     const calendar = document.getElementById('calendar');
     const modal = document.getElementById('modal');
