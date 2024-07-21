@@ -160,6 +160,7 @@ textarea:focus {
 .close:hover {
     color: #0073b1;
 }
+#walletButton,
 #homeButton,
 #emergencyButton {
     background-color: #0073b1;
@@ -210,3 +211,19 @@ a {
     0%, 100% { transform: rotate(0deg); }
     50% { transform: rotate(10deg); }
 }
+.wallet-documents {
+    padding-top: 10px;
+}
+#walletModal h2{
+    padding: 0px;
+    margin: 0px 0px 20px 0px;
+}
+.document-item {
+    padding: 10px 10px 10px 20px;
+    border: solid 0.5px #68acd1;
+    border-radius: 15px;
+    margin-bottom: 20px;
+}
+
+
+

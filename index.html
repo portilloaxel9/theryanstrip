@@ -15,9 +15,10 @@
     </div>
     <div id="calendar"></div>
     <div class="button-container">
+        <button id="walletButton"><i class="fas fa-wallet"></i> Wallet</button>
         <button id="homeButton"><i class="fas fa-home"></i> Home</button>
         <button id="emergencyButton"><i class="fas fa-exclamation-triangle"></i> Emergency</button>
-    </div>
+    </div>    
     <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
@@ -54,6 +55,14 @@
             <h2>Are you sure you want to call this contact?</h2>
             <button class="full-width" id="confirmCallButton">Yes</button>
             <button class="full-width" onclick="cancelCall()">No</button>
+        </div>
+    </div>
+    <div id="walletModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Documents in Wallet</h2>
+            <div class="wallet-documents">
+            </div>
         </div>
     </div>
     <script src="scripts.js"></script>
