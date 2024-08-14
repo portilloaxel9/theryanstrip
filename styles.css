@@ -248,3 +248,12 @@ a {
     color: #0073b1;
 }
 
+.modal-content {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.activities {
+    max-height: 70vh;
+    overflow-y: auto;
+}
