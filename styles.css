@@ -257,3 +257,21 @@ a {
     max-height: 70vh;
     overflow-y: auto;
 }
+
+
+body.modal-open {
+    overflow: hidden;
+}
+
+.modal-content {
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.activities {
+    max-height: 70vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+

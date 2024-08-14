@@ -209,6 +209,25 @@ document.addEventListener('DOMContentLoaded', async function() {
     getWeatherAndTimes();
     setInterval(getWeatherAndTimes, 60000); // Update every minute    
 
+    function closeModal() {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = "none";
+                document.body.classList.remove('modal-open');
+            }, 300);
+        });
+    }
+    
+    function openModal(modal) {
+        modal.style.display = "block";
+        setTimeout(() => {
+            modal.classList.add('show');
+            document.body.classList.add('modal-open');
+        }, 10);
+    }
+    
+
     function displayPopup() {
         const popupMessage = `
             <h2>Hey Papi, what's up?</h2>
